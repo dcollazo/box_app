@@ -5,7 +5,29 @@
         <%= @box.name %>
       </h1>
     </section>
-
-    <!-- box contents will go here -->
   </aside>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@fruit) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+
+    <%= f.submit "Add fruit", class: "btn btn-large btn-primary" %>
+  <% end %>
+  </div>
+</div>
+
+  <div class="span8">
+    <% if @box.fruits.any? %>
+      <h3>Contents (<%= @box.fruits.count %>)</h3>
+      <ol class="fruits">
+        <%= render @fruits %>
+      </ol>
+      <%= will_paginate @fruits %>
+    <% end %>
+  </div>
 </div>

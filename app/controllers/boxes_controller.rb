@@ -5,6 +5,7 @@ class BoxesController < ApplicationController
 
   def show
     @box = Box.find(params[:id])
+    @fruits = @box.fruits.paginate(page: params[:page])
   end
 
   def new

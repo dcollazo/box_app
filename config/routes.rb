@@ -1,7 +1,14 @@
 BoxApp::Application.routes.draw do
-  resources :boxes
-
   root to: 'static_pages#home'
+
+  resources :boxes
+  resources :fruits
+
+  get "boxes/show"
+  get "fruits/show"
+
+  match '/fruits', to: 'fruits#index', via: 'get'
+  match '/newfruit', to: 'fruits#new', via: 'get'
 
   match '/newbox', to: 'boxes#new', via: 'get'
   match '/boxes', to: 'boxes#index', via: 'get'
