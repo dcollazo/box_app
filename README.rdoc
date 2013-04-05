@@ -1,5 +1,9 @@
 == BOX APP
 
 1 - Model for basic container object ('Box')
+
 2 - Model for user-created fruit types
+
 3 - Instancing of fruit objects, which are stored in containers
+
+
